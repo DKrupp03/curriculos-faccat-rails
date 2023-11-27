@@ -1,19 +1,20 @@
-<p id="notice"><%= notice %></p>
+<h1>Currículos</h1>
 
-<h1>Curriculos</h1>
+<button type="button" class="btn btn-primary" style="margin-bottom: 15px;">
+  <%= link_to 'Novo currículo', new_curriculo_path %>
+</button>
 
-<table>
+<table class="table table-primary">
   <thead>
     <tr>
-      <th>Nome</th>
-      <th>Telefone</th>
-      <th>Email</th>
-      <th>Web</th>
-      <th>Experiencia</th>
-      <th colspan="3"></th>
+      <th scope="col">Nome</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Email</th>
+      <th scope="col">Endereço WEB</th>
+      <th scope="col">Experiência</th>
+      <th scope="col"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @curriculos.each do |curriculo| %>
       <tr>
@@ -22,14 +23,18 @@
         <td><%= curriculo.email %></td>
         <td><%= curriculo.web %></td>
         <td><%= curriculo.experiencia %></td>
-        <td><%= link_to 'Show', curriculo %></td>
-        <td><%= link_to 'Edit', edit_curriculo_path(curriculo) %></td>
-        <td><%= link_to 'Destroy', curriculo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <button type="button" class="btn btn-info btn-sm">
+            <%= link_to 'Visualizar', curriculo %>
+          </button>
+          <button type="button" class="btn btn-success btn-sm">
+            <%= link_to 'Editar', edit_curriculo_path(curriculo) %>
+          </button>
+          <button type="button" class="btn btn-danger btn-sm">
+            <%= link_to 'Excluír', curriculo, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir?' } %>
+          </button>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Curriculo', new_curriculo_path %>

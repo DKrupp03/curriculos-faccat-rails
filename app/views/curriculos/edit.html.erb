@@ -1,6 +1,10 @@
-<h1>Editing Curriculo</h1>
+<h1>Edição de currículo</h1>
 
 <%= render 'form', curriculo: @curriculo %>
 
-<%= link_to 'Show', @curriculo %> |
-<%= link_to 'Back', curriculos_path %>
+<button type="button" class="btn btn-secondary btn-sm" style="margin-top: 15px;">
+  <%= link_to 'Visualizar', @curriculo %>
+</button>
+<button type="button" class="btn btn-secondary btn-sm" style="margin-top: 15px;">
+  <%= link_to 'Voltar', curriculos_path %>
+</button>

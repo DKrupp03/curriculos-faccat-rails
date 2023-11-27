@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<h1>Visualização de currículo</h1>
 
 <p>
   <strong>Nome:</strong>
@@ -16,14 +16,18 @@
 </p>
 
 <p>
-  <strong>Web:</strong>
+  <strong>Endereço WEB:</strong>
   <%= @curriculo.web %>
 </p>
 
 <p>
-  <strong>Experiencia:</strong>
+  <strong>Experiência:</strong>
   <%= @curriculo.experiencia %>
 </p>
 
-<%= link_to 'Edit', edit_curriculo_path(@curriculo) %> |
-<%= link_to 'Back', curriculos_path %>
+<button type="button" class="btn btn-secondary btn-sm">
+  <%= link_to 'Editar', edit_curriculo_path(@curriculo) %>
+</button>
+<button type="button" class="btn btn-secondary btn-sm">
+  <%= link_to 'Voltar', curriculos_path %>
+</button>

@@ -1,42 +1,38 @@
 <%= form_with(model: curriculo, local: true) do |form| %>
   <% if curriculo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(curriculo.errors.count, "error") %> prohibited this curriculo from being saved:</h2>
-
+    <div id="error_explanation" style="background-color: red;">
       <ul>
-      <% curriculo.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% curriculo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
     <%= form.label :nome %>
-    <%= form.text_field :nome %>
+    <%= form.text_field :nome, { class: "form-control" } %>
   </div>
 
   <div class="field">
     <%= form.label :telefone %>
-    <%= form.text_field :telefone %>
+    <%= form.text_field :telefone, { class: "form-control" } %>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, { class: "form-control" } %>
   </div>
 
   <div class="field">
-    <%= form.label :web %>
-    <%= form.text_field :web %>
+    <%= form.label 'Endereço WEB' %>
+    <%= form.text_field :web, { class: "form-control" } %>
   </div>
 
   <div class="field">
-    <%= form.label :experiencia %>
-    <%= form.text_field :experiencia %>
+    <%= form.label 'experiência' %>
+    <%= form.text_field :experiencia, { class: "form-control" } %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <input type="submit" name="commit" value="Salvar currículo" class="btn btn-primary btn-sm">
 <% end %>
