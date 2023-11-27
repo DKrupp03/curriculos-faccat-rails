@@ -1,0 +1,42 @@
+<%= form_with(model: curriculo, local: true) do |form| %>
+  <% if curriculo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(curriculo.errors.count, "error") %> prohibited this curriculo from being saved:</h2>
+
+      <ul>
+      <% curriculo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefone %>
+    <%= form.text_field :telefone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :web %>
+    <%= form.text_field :web %>
+  </div>
+
+  <div class="field">
+    <%= form.label :experiencia %>
+    <%= form.text_field :experiencia %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
