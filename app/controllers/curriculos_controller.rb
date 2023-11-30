@@ -52,7 +52,7 @@ class CurriculosController < ApplicationController
 
   private
     def set_curriculo
-      @curriculo = Curriculo.find(params[:id])
+      @curriculo = Curriculo.find_by_id(params[:id])
     end
 
     def curriculo_params
